@@ -6,23 +6,34 @@
     <title>Pokedex</title>
 
     <link rel="stylesheet" href="pokedex-style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   </head>
   <body>
     <div class="header d-flex align-items-end justify-content-start">
       <h1 class="text-start">POKEDEX</h1>
     </div>
-    <div class="content">
+    <div class="content d-flex">
       <div class="col1 col-6">
         <div class="card">
           <div class="search">
-            <input type="text" placeholder="Enter Pokemon" spellcheck="false" />
-            <button><img src="assets/images/search.png" /></button>
+            <input
+              type="text"
+              id="pokemonName"
+              placeholder="Enter Pokemon name"
+              spellcheck="false"
+            />
+            <button onclick="fetchData()">
+              <img src="assets/images/search.png" />
+            </button>
           </div>
         </div>
       </div>
-      <div class="col2 col-6"></div>
+      <div class="col2 col-6">
+        <img alt="Pokemon Sprite" id="pokemonSprite" style="display: none" />
+      </div>
     </div>
+    <script src="pokedex-api.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
