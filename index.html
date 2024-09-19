@@ -9,12 +9,19 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   </head>
   <body>
-    <div class="header">
-      <h1>POKEDEX</h1>
+    <div class="header d-flex align-items-end justify-content-start">
+      <h1 class="text-start">POKEDEX</h1>
     </div>
     <div class="content">
-      <div class="col1"></div>
-      <div class="col2"></div>
+      <div class="col1 col-6">
+        <div class="card">
+          <div class="search">
+            <input type="text" placeholder="Enter Pokemon" spellcheck="false" />
+            <button><img src="assets/images/search.png" /></button>
+          </div>
+        </div>
+      </div>
+      <div class="col2 col-6"></div>
     </div>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
   </body>
