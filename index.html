@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
-
     <link rel="stylesheet" href="pokedex-style.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -31,7 +30,11 @@
       </div>
       <div class="col2 col-6 d-flex align-items-center justify-content-center">
         <div class="pokemonCard">
-          <p class="m-3" id="pokemonType">Psychic</p>
+          <div class="typeContainer">
+            <div class="type-box">
+              <span id="pokemonType"></span>
+            </div>
+          </div>
           <div class="imgCard">
             <img
               alt="Pokemon Sprite"
@@ -39,13 +42,8 @@
               style="display: none"
             />
           </div>
-          <h4 class="text-center" id="pokemon-name">Mew</h4>
-          <p class="text-center" id="pokemonDescription">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure
-            consequatur, debitis quos ratione quidem cumque? Esse voluptas
-            corporis laborum minus iusto, hic quam temporibus molestiae
-            explicabo ipsum, quaerat facere eveniet.
-          </p>
+          <h4 class="text-center" id="pokemon-name"></h4>
+          <span class="text-center" id="pokemonDescription"></span>
         </div>
       </div>
     </div>

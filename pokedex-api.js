@@ -23,17 +23,50 @@ async function fetchData() {
     // Log the entire data object to inspect its structure
     console.log(data);
 
-    // Check if 'sprites' and 'front_default' exist
+    // Set Pokémon Name in uppercase
+    document.getElementById("pokemon-name").textContent =
+      data.name.toUpperCase();
+
+    // Clear previous types
+    const typeContainer = document.querySelector(".typeContainer");
+    typeContainer.innerHTML = ""; // Clear previous types
+
+    // Create a new type box for each type
+    data.types.forEach((typeInfo) => {
+      const type = document.createElement("span");
+      type.textContent = typeInfo.type.name.toUpperCase();
+      type.classList.add("type-box", typeInfo.type.name); // Add type-specific class for background color
+      typeContainer.appendChild(type);
+    });
+
+    // Set Pokémon Sprite if available
     if (data.sprites && data.sprites.front_default) {
       const pokemonSprite = data.sprites.front_default;
       const imgElement = document.getElementById("pokemonSprite");
-
       imgElement.src = pokemonSprite;
       imgElement.style.display = "block";
     } else {
-      throw new Error("Sprite not found");
+      document.getElementById("pokemonSprite").style.display = "none";
+    }
+
+    // Fetch Pokémon Description from the Species API
+    const speciesResponse = await fetch(data.species.url);
+    const speciesData = await speciesResponse.json();
+
+    // Find the description in English
+    const flavorTextEntry = speciesData.flavor_text_entries.find(
+      (entry) => entry.language.name === "en"
+    );
+    if (flavorTextEntry) {
+      document.getElementById("pokemonDescription").textContent =
+        flavorTextEntry.flavor_text;
+    } else {
+      document.getElementById("pokemonDescription").textContent =
+        "Description not available.";
     }
   } catch (error) {
     console.error(error.message);
+    document.getElementById("pokemonDescription").textContent =
+      "An error occurred. Please try again.";
   }
 }
