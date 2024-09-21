@@ -18,6 +18,7 @@
   font-family: "Luckiest Guy", cursive;
   color: #fff;
   font-size: 50px;
+  margin-left: 10px;
 }
 
 .card {
@@ -26,7 +27,7 @@
   background: linear-gradient(135deg, #ff4e50, #fc913a);
   color: #fff;
   margin: 100px auto 0;
-  border-radius: 20px;
+  border-radius: 30px !important;
   padding: 40px 35px;
   text-align: center;
 }
@@ -63,4 +64,35 @@
 
 .search button img {
   width: 16px;
+}
+
+#pokemonSprite {
+  width: 300px;
+  height: 300px;
+}
+
+.pokemonCard {
+  background: linear-gradient(135deg, #ff4e50, #fc913a);
+  margin-top: 20px;
+  width: 60%;
+  max-width: 400px;
+  height: 530px;
+  border: #000 solid 2px;
+  border-radius: 30px;
+}
+
+.pokemonCard p {
+  color: #fff;
+}
+
+.pokemonCard h4 {
+  color: #fff;
+}
+
+.imgCard {
+  background: #fff;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border: #000 solid 1px;
 }
