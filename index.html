@@ -8,9 +8,49 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   </head>
   <body>
-    <div class="header d-flex align-items-end justify-content-start">
-      <h1 class="text-start">POKEDEX</h1>
-    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"
+          ><img
+            src="assets/images/pokeball-logo.png"
+            alt="pokeball"
+            width="50"
+            height="50"
+          />POKEDEX</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pokemons</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
     <div class="content d-flex">
       <div class="col1 col-6">
         <div class="card">
