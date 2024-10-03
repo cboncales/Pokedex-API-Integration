@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokedex</title>
-    <link rel="stylesheet" href="pokedex-style.css" />
+    <title>Document</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="pokedex-style.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -38,7 +38,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pokemon.html">Pokemons</a>
+              <a class="nav-link" href="#">Pokemons</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -53,7 +53,41 @@
     <!-- End of Navbar -->
 
     <!-- Main Container -->
-
+    <div class="content d-flex">
+      <div class="col1 col-6">
+        <div class="card">
+          <div class="search">
+            <input
+              type="text"
+              id="pokemonName"
+              placeholder="Enter Pokemon name"
+              spellcheck="false"
+            />
+            <button onclick="fetchData()">
+              <img src="assets/images/search.png" />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col2 col-6 d-flex align-items-center justify-content-center">
+        <div class="pokemonCard">
+          <div class="typeContainer">
+            <div class="type-box">
+              <span id="pokemonType"></span>
+            </div>
+          </div>
+          <div class="imgCard">
+            <img
+              alt="Pokemon Sprite"
+              id="pokemonSprite"
+              style="display: none"
+            />
+          </div>
+          <h4 class="text-center" id="pokemon-name"></h4>
+          <span class="text-center" id="pokemonDescription"></span>
+        </div>
+      </div>
+    </div>
     <!-- End of Main Container -->
 
     <script src="pokedex-api.js"></script>
