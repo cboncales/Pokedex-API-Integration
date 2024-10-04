@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/images/pokeball-logo.png" />
     <title>Pokedex</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="pokedex-style.css" />
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-secondary">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html"
           ><img
@@ -53,38 +54,52 @@
     <!-- End of Navbar -->
 
     <!-- Main Container -->
-    <div class="content d-flex">
-      <div class="col1 col-6">
-        <div class="card">
-          <div class="search">
-            <input
-              type="text"
-              id="pokemonName"
-              placeholder="Enter Pokemon name"
-              spellcheck="false"
-            />
-            <button onclick="fetchData()">
-              <img src="assets/images/search.png" />
-            </button>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card bg-secondary-subtle">
+            <div class="search">
+              <input
+                type="text"
+                id="pokemonName"
+                placeholder="Enter Pokemon name"
+                spellcheck="false"
+              />
+              <button onclick="fetchData()">
+                <img src="assets/images/search.png" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col2 col-6 d-flex align-items-center justify-content-center">
-        <div class="pokemonCard">
-          <div class="typeContainer">
-            <div class="type-box">
-              <span id="pokemonType"></span>
-            </div>
-          </div>
-          <div class="imgCard">
+      <div
+        class="row bg-body-secondary border border-secondary-subtle rounded m-2"
+      >
+        <div class="col col-5">
+          <div
+            class="imgCard bg-light border border-secondary-subtle rounded m-3"
+          >
             <img
               alt="Pokemon Sprite"
               id="pokemonSprite"
               style="display: none"
+              height="400"
+              width="400"
             />
           </div>
-          <h4 class="text-center" id="pokemon-name"></h4>
+        </div>
+        <div class="col col-7 mt-5">
+          <h4 class="text-start" id="pokemon-name"></h4>
+          <div class="typeContainer my-3">
+            <div class="type-box">
+              <span id="pokemonType"></span>
+            </div>
+          </div>
           <span class="text-center" id="pokemonDescription"></span>
+          <div class="my-2">
+            <span id="pokemonHeight"></span><br />
+            <span id="pokemonWeight"></span>
+          </div>
         </div>
       </div>
     </div>

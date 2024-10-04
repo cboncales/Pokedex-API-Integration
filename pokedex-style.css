@@ -7,28 +7,20 @@
   padding: 0;
   box-sizing: border-box;
 }
-.header {
-  height: 70px;
-  background: linear-gradient(135deg, #ff4e50, #fc913a);
-}
-
-.header h1 {
-  /* font-family: "Press Start 2P", cursive; */
-  /* font-family: "Baloo 2", cursive; */
-  font-family: "Luckiest Guy", cursive;
-  color: #fff;
-  font-size: 50px;
-  margin-left: 10px;
+body {
+  background-image: url("assets/images/background.jfif"); /* Path to your image */
+  background-size: cover; /* Ensures the image covers the entire page */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
 }
 
 .card {
   width: 90%;
   max-width: 470px;
-  background: linear-gradient(135deg, #ff4e50, #fc913a);
   color: #fff;
-  margin: 100px auto 0;
+  margin: 20px auto 0;
   border-radius: 30px !important;
-  padding: 40px 35px;
+  padding: 20px 25px;
   text-align: center;
 }
 
@@ -42,10 +34,10 @@
 .search input {
   border: 0;
   outline: 0;
-  background: #ebfffc;
+  background: #fff;
   color: #555;
   padding: 10px 25px;
-  height: 60px;
+  height: 50px;
   border-radius: 30px;
   flex: 1;
   margin-right: 16px;
@@ -55,10 +47,10 @@
 .search button {
   border: 0;
   outline: 0;
-  background: #ebfffc;
+  background: #fff;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
 }
 
@@ -66,19 +58,8 @@
   width: 16px;
 }
 
-#pokemonSprite {
-  width: 300px;
-  height: 300px;
-}
-
 .pokemonCard {
-  background: linear-gradient(135deg, #ff4e50, #fc913a);
-  margin-top: 20px;
-  width: 60%;
-  max-width: 400px;
-  height: 530px;
-  border: #000 solid 2px;
-  border-radius: 30px;
+  border: solid #000 1px;
 }
 
 .pokemonCard span {
@@ -95,24 +76,14 @@
 
 .type-box {
   display: none;
-  padding: 2px;
-  margin: 7px;
-  border: 1px solid #fff;
+  padding: 5px;
+  border: 1px solid #e7e5e5;
   border-radius: 10px;
 }
 
 .imgCard {
-  background: #fff;
-  width: 300px;
-  height: 300px;
-  margin: auto;
-  border: #000 solid 1px;
-}
-
-#pokemonDescription {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 400px;
+  height: 400px;
 }
 
 .normal {
