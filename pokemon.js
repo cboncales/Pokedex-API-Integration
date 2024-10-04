@@ -1,8 +1,8 @@
-const pokemonCount = 151;
+const pokemonCount = 1015;
 var pokedex = {};
 
 window.onload = async function () {
-  // Loop through all Pokemon
+  // Loop through all Pokémon
   for (let i = 1; i <= pokemonCount; i++) {
     await getPokemon(i); // Fetch each Pokémon's data
     displayPokemonCard(i); // Render each Pokémon's card
@@ -16,7 +16,7 @@ async function getPokemon(num) {
   let pokemon = await res.json();
 
   let pokemonName = pokemon["name"];
-  let pokemonType = pokemon["types"].map((type) => type.type.name).join(", ");
+  let pokemonTypes = pokemon["types"].map((type) => type.type.name); // Store types as an array
   let pokemonImg = pokemon["sprites"]["front_default"];
 
   res = await fetch(pokemon["species"]["url"]);
@@ -29,14 +29,19 @@ async function getPokemon(num) {
   pokedex[num] = {
     name: pokemonName,
     img: pokemonImg,
-    types: pokemonType,
+    types: pokemonTypes, // Store types as array
     desc: description,
   };
 }
 
-// Function to display each Pokemon card
+// Function to display each Pokémon card
 function displayPokemonCard(num) {
   let pokemon = pokedex[num];
+
+  // Generate HTML for each type
+  let typeHTML = pokemon.types
+    .map((type) => `<p class="type-box ${type}">${type.toUpperCase()}</p>`) // Add 'type-box' class and type-specific class
+    .join(""); // Join the generated HTML for multiple types
 
   // Create card structure
   let card = `
@@ -47,14 +52,14 @@ function displayPokemonCard(num) {
                 }" class="card-img-top" height="100" width="100" alt="${
     pokemon.name
   }">
-                <div class="card-body">
-                    <h5 class="card-title fs-6">${pokemon.name.toUpperCase()}</h5>
-                    <p>${pokemon.types}</p>
+                <div class="card-body text-center">
+                    <h5 class="card-title fs-6 text-center">${pokemon.name.toUpperCase()}</h5>
+                    ${typeHTML} <!-- Insert generated type boxes -->
                 </div>
             </div>
         </div>
     `;
 
-  // Append the card to the Pokemon container
+  // Append the card to the Pokémon container
   document.querySelector(".pokemons").innerHTML += card;
 }
